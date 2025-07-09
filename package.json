@@ -1,0 +1,43 @@
+{
+  "name": "quiz_application",
+  "version": "1.0.0",
+  "description": "AI-powered quiz application",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"cd backend && nodemon server.js\" \"cd frontend && npm run dev\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:init": "node db/init.js",
+    "db:test": "node db/test-connection.js",
+    "db:fix": "node db/fix-schema.js",
+    "frontend": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "dev:both": "concurrently \"npm run dev\" \"npm run frontend\"",
+    "build": "npm run frontend:build",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@react-three/drei": "^10.0.7",
+    "@react-three/fiber": "^9.1.2",
+    "axios": "^1.6.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "framer-motion": "^12.9.2",
+    "jsonwebtoken": "^9.0.1",
+    "openai": "^4.0.0",
+    "path": "^0.12.7",
+    "pg": "^8.11.1",
+    "react-helmet": "^6.1.0",
+    "react-intersection-observer": "^9.16.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^2.0.22"
+  }
+}
