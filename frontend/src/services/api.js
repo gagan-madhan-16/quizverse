@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://74.178.89.74/api';
+const BASE_URL = 'https://quzz.onrender.com/api';
 
 const api = axios.create({
   baseURL: BASE_URL,
